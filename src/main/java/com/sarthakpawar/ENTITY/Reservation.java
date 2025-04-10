@@ -57,6 +57,3 @@ public class Reservation {
     }
 
 }
-git add.
-git commit -m "Fixed Bugs and Updated code"
-git push origin main
