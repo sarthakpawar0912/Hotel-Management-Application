@@ -12,10 +12,11 @@ import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;
 
 @Service("customerRoomService")
-
 public class RoomServiceImpl implements RoomService {
+
     @Autowired
     private RoomRepository roomRepository;
+
     public RoomsResponseDto getAvailableRooms(int pageNumber) {
         Pageable pageable = PageRequest.of(pageNumber, 6);
         Page<Room> roomPage=roomRepository.findByAvailable(true,pageable);
@@ -25,4 +26,5 @@ public class RoomServiceImpl implements RoomService {
         roomsResponseDto.setRoomDtoList(roomPage.stream().map(Room::getRoomDto).collect(Collectors.toList()));
         return roomsResponseDto;
     }
+
 }
