@@ -23,9 +23,12 @@ public class ReservationServiceImpl implements ReservationService{
 
     @Autowired
     private ReservationRepository reservationRepository ;
+
     @Autowired
     private RoomRepository roomRepository;
+
     public static final int SEARCH_RESULT_PER_PAGE=4;
+
     public ReservationResponseDto getAllReservations(int pageNumber){
         if(pageNumber < 0) pageNumber = 0;
         Pageable pageable = PageRequest.of(pageNumber, SEARCH_RESULT_PER_PAGE);
@@ -45,7 +48,6 @@ public class ReservationServiceImpl implements ReservationService{
         return reservationResponseDto;
     }
 
-
     public  boolean changeReservationStatus(Long id, String status){
         Optional<Reservation> optionalReservation=reservationRepository.findById(id);
         if (optionalReservation.isPresent()){
@@ -64,4 +66,5 @@ public class ReservationServiceImpl implements ReservationService{
         }
         return false;
     }
+
 }
