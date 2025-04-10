@@ -18,5 +18,4 @@ public class CustomerRoomController {
         return ResponseEntity.ok(roomService.getAvailableRooms(pageNumber));
     }
 
-
 }
