@@ -16,9 +16,13 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private LocalDate checkInDate;
+
     private LocalDate checkOutDate;
+
     private Long price;
+
     @Enumerated(EnumType.STRING)
     private ReservationStatus reservationStatus;
 
@@ -32,95 +36,9 @@ public class Reservation {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    public Reservation(Long id, LocalDate checkInDate, LocalDate checkOutDate, Long price, ReservationStatus reservationStatus, Room room, User user) {
-        this.id = id;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-        this.price = price;
-        this.reservationStatus = reservationStatus;
-        this.room = room;
-        this.user = user;
-    }
-
-    public Reservation() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDate getCheckInDate() {
-        return checkInDate;
-    }
-
-    public void setCheckInDate(LocalDate checkInDate) {
-        this.checkInDate = checkInDate;
-    }
-
-    public LocalDate getCheckOutDate() {
-        return checkOutDate;
-    }
-
-    public void setCheckOutDate(LocalDate checkOutDate) {
-        this.checkOutDate = checkOutDate;
-    }
-
-    public Long getPrice() {
-        return price;
-    }
-
-    public void setPrice(Long price) {
-        this.price = price;
-    }
-
-    public ReservationStatus getReservationStatus() {
-        return reservationStatus;
-    }
-
-    public void setReservationStatus(ReservationStatus reservationStatus) {
-        this.reservationStatus = reservationStatus;
-    }
-
-    public Room getRoom() {
-        return room;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "id=" + id +
-                ", checkInDate=" + checkInDate +
-                ", checkOutDate=" + checkOutDate +
-                ", price=" + price +
-                ", reservationStatus=" + reservationStatus +
-                ", room=" + room +
-                ", user=" + user +
-                '}';
-    }
-
-
-
-
 
     public ReservationDto getReservationDto(){
         ReservationDto reservationDto=new ReservationDto();
-
 
         reservationDto.setId(id);
         reservationDto.setPrice(price);
@@ -137,4 +55,8 @@ public class Reservation {
 
         return reservationDto;
     }
+
 }
+git add.
+git commit -m "Fixed Bugs and Updated code"
+git push origin main
