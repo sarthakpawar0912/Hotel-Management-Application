@@ -26,6 +26,7 @@ import java.util.Optional;
 @RequestMapping("/api/auth")
 @CrossOrigin("*")
 public class AuthController {
+
     @Autowired
     private AuthService authService;
 
@@ -53,8 +54,6 @@ public class AuthController {
         }
     }
 
-
-
     @PostMapping("/login")
     public AuthenticationResponse createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest){
         try {
@@ -76,7 +75,5 @@ public class AuthController {
         }
         return authenticationResponse;
     }
-
-
 
 }
