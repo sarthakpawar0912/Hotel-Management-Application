@@ -16,8 +16,6 @@ public class RoomController {
     @Autowired
     private RoomService roomService;
 
-
-
     @PostMapping("/room")
     public ResponseEntity<?> postRoom(@RequestBody RoomDto roomDto){
 
@@ -28,7 +26,6 @@ public class RoomController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-
 
     @GetMapping("/rooms/{pageNumber}")
     public ResponseEntity<?> getAllRooms(@PathVariable int pageNumber){
