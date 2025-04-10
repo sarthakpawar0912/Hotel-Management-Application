@@ -14,4 +14,6 @@ public class UserDto {
 
     private UserRole userRole;
 
+    public UserDto(Long id, String email, String name, UserRole userRole) {
+    }
 }
