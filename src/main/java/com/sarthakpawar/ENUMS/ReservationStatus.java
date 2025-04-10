@@ -2,5 +2,10 @@ package com.sarthakpawar.ENUMS;
 
 public enum ReservationStatus {
 
-    PENDING,APPROVED,REJECTED
+    PENDING,
+
+    APPROVED,
+
+    REJECTED
+
 }
