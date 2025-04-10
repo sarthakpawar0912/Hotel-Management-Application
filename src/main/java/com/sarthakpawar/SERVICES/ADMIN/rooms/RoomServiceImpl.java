@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 @Service("adminRoomService")
 public class RoomServiceImpl implements RoomService {
+
     @Autowired
     private RoomRepository roomRepository;
 
@@ -50,7 +51,6 @@ public class RoomServiceImpl implements RoomService {
         return roomsResponseDto;
     }
 
-
     public RoomDto getRoomById(Long id){
         Optional<Room> optionalRoom=roomRepository.findById(id);
         if(optionalRoom.isPresent()) {
@@ -73,8 +73,6 @@ public class RoomServiceImpl implements RoomService {
         return false;
     }
 
-
-
     public void deleteRoom(Long id){
         Optional<Room> optionalRoom=roomRepository.findById(id);
         if(optionalRoom.isPresent()) {
@@ -83,4 +81,5 @@ public class RoomServiceImpl implements RoomService {
             throw  new EntityNotFoundException("Room not present.");
         }
     }
+
 }
