@@ -21,12 +21,16 @@ import java.util.stream.Collectors;
 
 @Service
 public class BookingServiceImpl implements  BookingService{
+
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private RoomRepository roomRepository;
+
     @Autowired
     private ReservationRepository reservationRepository;
+
     public static final int SEARCH_RESULT_PER_PAGE=4;
 
     public boolean postReservation(ReservationDto reservationDto){
@@ -56,4 +60,5 @@ public class BookingServiceImpl implements  BookingService{
         reservationResponseDto.setTotalPages(reservationPage.getTotalPages());
         return reservationResponseDto;
     }
+
 }
