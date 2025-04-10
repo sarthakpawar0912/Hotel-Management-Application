@@ -13,14 +13,20 @@ import java.util.List;
 @Entity
 @Data
 public class User implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String email;
+
     private String password;
+
     private String name;
+
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(userRole.name()));
@@ -55,7 +61,6 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 
     public UserDto getUserDto() {
         return new UserDto(
