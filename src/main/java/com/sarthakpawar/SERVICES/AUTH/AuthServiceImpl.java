@@ -40,6 +40,7 @@ public class AuthServiceImpl implements AuthService{
         if (userRepository.findFirstByEmail(signUpRequest.getEmail()).isPresent()) {
             throw new EntityExistsException("User already present with Email: " + signUpRequest.getEmail());
         }
+
         User user = new User();
         user.setEmail(signUpRequest.getEmail());
         user.setName(signUpRequest.getName());
