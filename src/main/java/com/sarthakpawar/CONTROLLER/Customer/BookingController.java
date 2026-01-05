@@ -29,6 +29,7 @@ public class BookingController {
 
     @GetMapping("/bookings/{userId}/{pageNumber}")
     public ResponseEntity<?> getAllBookingsByUserId(@PathVariable Long userId, @PathVariable int pageNumber){
+
         try{
             return ResponseEntity.ok(bookingService.getAllReservationByUserId(userId,pageNumber));
         }
