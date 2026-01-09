@@ -1,13 +1,21 @@
 package com.sarthakpawar.DTO;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class RoomsResponseDto {
 
     private List<RoomDto> roomDtoList;
     private Integer totalPages;
     private Integer pageNumber;
+    private Long totalElements;
 
+    // For filter options
+    private List<String> roomTypes;
+    private Long minPrice;
+    private Long maxPrice;
 
     public RoomsResponseDto(List<RoomDto> roomDtoList, Integer totalPages, Integer pageNumber) {
         this.roomDtoList = roomDtoList;
@@ -18,36 +26,4 @@ public class RoomsResponseDto {
     public RoomsResponseDto() {
     }
 
-    @Override
-    public String toString() {
-        return "RoomsResponseDto{" +
-                "roomDtoList=" + roomDtoList +
-                ", totalPages=" + totalPages +
-                ", pageNumber=" + pageNumber +
-                '}';
-    }
-
-    public List<RoomDto> getRoomDtoList() {
-        return roomDtoList;
-    }
-
-    public void setRoomDtoList(List<RoomDto> roomDtoList) {
-        this.roomDtoList = roomDtoList;
-    }
-
-    public Integer getTotalPages() {
-        return totalPages;
-    }
-
-    public void setTotalPages(int totalPages) {
-        this.totalPages = totalPages;
-    }
-
-    public Integer getPageNumber() {
-        return pageNumber;
-    }
-
-    public void setPageNumber(Integer pageNumber) {
-        this.pageNumber = pageNumber;
-    }
 }

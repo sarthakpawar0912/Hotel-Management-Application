@@ -39,4 +39,24 @@ public class BookingController {
         }
     }
 
+    @PutMapping("/bookings/{reservationId}/cancel")
+    public ResponseEntity<?> cancelBooking(
+            @PathVariable Long reservationId,
+            @RequestParam Long userId) {
+
+        try {
+            boolean success = bookingService.cancelReservation(reservationId, userId);
+
+            if (success) {
+                return ResponseEntity.ok().body("Booking cancelled successfully");
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Unable to cancel booking. It may be already paid, checked-in, or past the cancellation period.");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("An error occurred while cancelling the booking");
+        }
+    }
+
 }

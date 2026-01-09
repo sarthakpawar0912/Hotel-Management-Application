@@ -4,6 +4,7 @@ import com.sarthakpawar.ENUMS.ReservationStatus;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 public class ReservationDto {
@@ -13,6 +14,10 @@ public class ReservationDto {
     private LocalDate checkInDate;
 
     private LocalDate checkOutDate;
+
+    private LocalDateTime checkInTime;
+
+    private LocalDateTime checkOutTime;
 
     private Long price;
 
@@ -24,8 +29,18 @@ public class ReservationDto {
 
     private String roomName;
 
-    private Long UserId;
+    private Long userId;
 
-    private String username;
+    private String userName;
+
+    // Additional fields for booking
+    private Integer nights;
+    private Long discount;
+    private Long totalAmount;
+    private String promoCode;
+    private String specialRequests;
+
+    // Payment status
+    private Boolean isPaid = false;
 
 }

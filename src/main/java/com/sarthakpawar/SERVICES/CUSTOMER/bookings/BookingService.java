@@ -9,4 +9,6 @@ public interface BookingService {
 
     ReservationResponseDto getAllReservationByUserId(Long userId, int pageNumber);
 
+    boolean cancelReservation(Long reservationId, Long userId);
+
 }
